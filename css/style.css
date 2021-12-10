@@ -79,7 +79,7 @@ body.lock {
     width: 100vw;
     height: 100vh;
     background: #fff;
-    z-index: 10;
+    z-index: 10000000;
     display: none;
 }
 .logo-container {
