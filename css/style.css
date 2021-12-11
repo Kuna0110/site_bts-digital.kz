@@ -79,7 +79,7 @@ body.lock {
     width: 100vw;
     height: 100vh;
     background: #fff;
-    z-index: 10000000;
+    z-index: 10000;
     display: none;
 }
 .logo-container {
@@ -293,13 +293,14 @@ body.lock {
     align-items: center;
     gap: 50px;
 
-    margin-left: -55%;
+    margin-left: -40%;
 }
 .slick-box {
     position: relative;
     width: 35rem;
     height: 35rem;
     background: #fff;
+    transition: all 0.2s;
 }
 .slick-box:hover {
     /*transform: translateX(5%);*/
@@ -333,7 +334,7 @@ body.lock {
 .team {
     background: #222;
     width: 100vw;
-    margin-left: calc(49% - 50vw);
+    margin-left: calc(50% - 50vw);
 }
 .team-carousel {
     display: block;
@@ -344,6 +345,8 @@ body.lock {
     align-items: flex-start;
     gap: 5rem;
     height: 70rem;
+
+    overflow: hidden;
 }
 .team-box-text {
     color: #fff;
@@ -395,6 +398,14 @@ body.lock {
     width: 100%;
     height: 100%;
     display: block;
+}
+.team-img-show {
+    display: none;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+
 }
 /*change-world*/
 .change-world {
@@ -462,8 +473,10 @@ body.lock {
     grid-template-columns: 1fr 60rem 60rem 1fr;
     margin-top: 9.1rem;
 
+    /*Это костыль, изначально не правильно начал верстать шлавную сетку*/
     width: 100vw;
-    margin-left: calc(49% - 50vw);
+    margin-left: calc(50% - 50vw);
+    overflow: hidden;
 }
 .footer-contacts {
     grid-column: 2/4;
@@ -581,7 +594,12 @@ body.lock {
         font-size: 12px;
         color: #222;
     }
-    /**/
+    /*team*/
+    .team-box-images {
+        width: 400px;
+        height: 70rem;
+    }
+    /*footer*/
     .footer {
         grid-template-columns: 10rem 1fr 1fr 10rem;
     }
@@ -608,15 +626,15 @@ body.lock {
         font-size: 12px;
         color: #222;
     }
-    /**/
+    /*header*/
     .header-left-box {
         padding: 2rem 0;
     }
-    /**/
+    /*intro*/
     .intro {
         margin-top: 5.2rem;
     }
-    /**/
+    /*footer*/
     .footer {
         grid-template-columns: 3rem 1fr 1fr 3rem;
     }
@@ -643,11 +661,11 @@ body.lock {
         font-size: 12px;
         color: #222;
     }
-    /**/
+    /*header*/
     .header-left-box {
         padding: 2rem 0;
     }
-    /**/
+    /*intro*/
     .intro {
         margin-top: 5.2rem;
     }
@@ -665,7 +683,7 @@ body.lock {
     .nav-button {
         display: block;
         position: fixed;
-        z-index: 10000;
+        z-index: 10000000;
         width: 36px;
         height: 25px;
         cursor: pointer;
@@ -715,11 +733,17 @@ body.lock {
     #nav-check:checked ~ .nav-box {
         display: block;
       }
-      /*Первый слайдер*/
-      .slick-slider {
-        /*flex-direction: column;
-        gap: 50px;*/
-    }
+      /*team*/
+      .team-box-text {
+        width: 100%;
+        padding: 3rem 3rem;
+      }
+      .team-box-images {
+          display: none;
+      }
+      .team-img-show {
+          display: block;
+      }
 }
 @media only screen and (max-width: 500px) {
     .page {
@@ -739,7 +763,12 @@ body.lock {
         font-size: 4rem;
         line-height: 4rem;
     }
-    /**/
+    /*team*/
+    .team-text-h1-1 {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+    /*footer*/
     .footer {
         grid-template-columns: 1.5rem 1fr 1.5rem;
     }
