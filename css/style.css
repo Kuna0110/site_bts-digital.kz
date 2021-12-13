@@ -338,6 +338,12 @@ body.lock {
 }
 .team-carousel {
     display: block;
+    overflow: hidden;
+}
+.team-slide-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 .team-box {
     display: flex;
